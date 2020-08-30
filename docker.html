@@ -23,30 +23,30 @@
 <meta charset='utf-8'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href='./assets/favicon.png' rel='shortcut icon'>
-<meta content='/bash.html' name='app:pageurl'>
+<meta content='/docker.html' name='app:pageurl'>
 
 
-  <title>bash cheatsheet</title>
-  <meta content='bash cheatsheet' property='og:title'>
-  <meta content='bash cheatsheet' property='twitter:title'>
+  <title>docker cheatsheet</title>
+  <meta content='docker cheatsheet' property='og:title'>
+  <meta content='docker cheatsheet' property='twitter:title'>
   <meta content='article' property='og:type'>
 
 
 
-  <meta content='https://assets.devhints.io/previews/bash.jpg?t=20200830165813' property='og:image'>
-  <meta content='https://assets.devhints.io/previews/bash.jpg?t=20200830165813' property='twitter:image'>
+  <meta content='https://assets.devhints.io/previews/docker.jpg?t=20200830165813' property='og:image'>
+  <meta content='https://assets.devhints.io/previews/docker.jpg?t=20200830165813' property='twitter:image'>
   <meta content='900' property='og:image:width'>
   <meta content='471' property='og:image:height'>
 
 
 
-  <meta content="One-page guide to bash: usage, examples, and more. linux命令行快捷键" name="description">
-  <meta content="One-page guide to bash: usage, examples, and more. linux命令行快捷键" property="og:description">
-  <meta content="One-page guide to bash: usage, examples, and more. linux命令行快捷键" property="twitter:description">
+  <meta content="One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" name="description">
+  <meta content="One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" property="og:description">
+  <meta content="One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" property="twitter:description">
 
 
-<link rel="canonical" href="http://0.0.0.0:4001/bash">
-<meta name="og:url" content="http://0.0.0.0:4001/bash">
+<link rel="canonical" href="http://0.0.0.0:4001/docker">
+<meta name="og:url" content="http://0.0.0.0:4001/docker">
 
 
 
@@ -62,12 +62,8 @@
 
 
 
-  <meta content='Linux' property='article:section'>
+  <meta content='Devops' property='article:section'>
 
-
-
-
-  <meta content='Featured' property='article:tag'>
 
 
 
@@ -2176,9 +2172,9 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "WebPage",
     "@id": "https://google.com/article"
   },
-  "headline": "bash cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/bash.jpg?t=20200830165813" ],
-  "description": "One-page guide to bash: usage, examples, and more. linux命令行快捷键"
+  "headline": "docker cheatsheet",
+  "image": [ "https://assets.devhints.io/previews/docker.jpg?t=20200830165813" ],
+  "description": "One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里"
 }
 </script>
 <script type='application/ld+json'>
@@ -2189,15 +2185,15 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "ListItem",
     "position": 1,
     "item": {
-      "@id": "http://0.0.0.0:4001/#linux",
-      "name": "Linux"
+      "@id": "http://0.0.0.0:4001/#devops",
+      "name": "Devops"
     }
   },{
     "@type": "ListItem",
     "position": 2,
     "item": {
-      "@id": "http://0.0.0.0:4001/bash",
-      "name": "bash"
+      "@id": "http://0.0.0.0:4001/docker",
+      "name": "docker"
     }
   }]
 }
@@ -2241,7 +2237,7 @@ ul.-also-see.-also-see.-also-see > li > em {
 
 <div class='body-area'>
   <header class='main-heading -center' role='banner'>
-    <h1 class='h1'>bash <em>速查</em></h1>
+    <h1 class='h1'>docker <em>速查</em></h1>
 
     <div class='pubbox' data-js-no-preview>
       
@@ -2254,108 +2250,65 @@ ul.-also-see.-also-see.-also-see > li > em {
 
   
     <div class='intro-content MarkdownBody'>
-      <p>linux命令行快捷键</p>
+      <p>这里只记录常规使用的，详细请查看<a href="https://www.cnblogs.com/shipment/p/13526858.html#servicereload">这里</a></p>
 
     </div>
   
 
   <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
-    <h2 class="-three-column" id="getting-started">Getting started</h2>
+    <h3 id="生命周期管理">生命周期管理</h3>
 
-<h3 id="移动">移动</h3>
+<pre class="-shortcuts"><code class="language-shell">#创建一个容器，一般写docker-compose.yml文件处理
+docker run [OPTIONS]
 
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>a</code></td>
-      <td>移动带行首</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>e</code></td>
-      <td>移动带行尾</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>←</code></td>
-      <td>移动到左边上个词</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>→</code></td>
-      <td>移动到右边下个词</td>
-    </tr>
-  </tbody>
-</table>
+#启动|停止|重启 nginx容器
+docker start|stop|restart nginx 
 
-<h3 id="删除">删除</h3>
+#杀掉nginx容器
+docker kill nginx
 
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>u</code></td>
-      <td>从光标删到行首</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>k</code></td>
-      <td>从光标删到行尾</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>w</code></td>
-      <td>删除光标前一个词</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>y</code></td>
-      <td>撤销删除</td>
-    </tr>
-  </tbody>
-</table>
+#删除nginx容器  
+docker rm nginx
+</code></pre>
 
-<h3 id="其他">其他</h3>
+<h3 id="操作运维">操作运维</h3>
 
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>z</code></td>
-      <td>vim切换到命令行</td>
-    </tr>
-    <tr>
-      <td><code>fg</code></td>
-      <td>命令行切换回vim</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>r</code></td>
-      <td>历史命令查找</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>l</code></td>
-      <td>清屏</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>d</code></td>
-      <td>退出当前shell log</td>
-    </tr>
-    <tr>
-      <td><code>!!</code></td>
-      <td>执行上一条命令</td>
-    </tr>
-  </tbody>
-</table>
+<pre class="-shortcuts"><code class="language-shell">#查看当前所有容器 
+docker ps -a
+
+#查看nginx容器的元数据
+docker inspect nginx
+
+#查看nginx容器的进程
+docker top  nginx
+
+#显示带时间戳的log
+docker logs -f -t nginx
+
+#显示8-28的最新10条log
+docker logs --since="2020-08-28" --tail 10 nginx
+
+#把test.sh拷贝到nginx容器的root下面
+docker cp test.sh nginx:/root/
+</code></pre>
+
+<h3 id="容器相关">容器相关</h3>
+
+<pre class="-shortcuts"><code class="language-shell">#查看容器信息 
+docker info
+
+#查看容器当前镜像
+docker image ls
+
+#清理none镜像 
+docker rmi $(docker images -f "dangling=true" -q)
+
+#拉取镜像
+docker pull
+
+#进入nginx容器 
+docker exec -it nginx /bin/bash
+</code></pre>
 
   </main>
 </div>

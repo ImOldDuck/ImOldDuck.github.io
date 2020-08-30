@@ -23,30 +23,30 @@
 <meta charset='utf-8'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href='./assets/favicon.png' rel='shortcut icon'>
-<meta content='/bash.html' name='app:pageurl'>
+<meta content='/saltstack.html' name='app:pageurl'>
 
 
-  <title>bash cheatsheet</title>
-  <meta content='bash cheatsheet' property='og:title'>
-  <meta content='bash cheatsheet' property='twitter:title'>
+  <title>saltstack cheatsheet</title>
+  <meta content='saltstack cheatsheet' property='og:title'>
+  <meta content='saltstack cheatsheet' property='twitter:title'>
   <meta content='article' property='og:type'>
 
 
 
-  <meta content='https://assets.devhints.io/previews/bash.jpg?t=20200830165813' property='og:image'>
-  <meta content='https://assets.devhints.io/previews/bash.jpg?t=20200830165813' property='twitter:image'>
+  <meta content='https://assets.devhints.io/previews/saltstack.jpg?t=20200830165813' property='og:image'>
+  <meta content='https://assets.devhints.io/previews/saltstack.jpg?t=20200830165813' property='twitter:image'>
   <meta content='900' property='og:image:width'>
   <meta content='471' property='og:image:height'>
 
 
 
-  <meta content="One-page guide to bash: usage, examples, and more. linux命令行快捷键" name="description">
-  <meta content="One-page guide to bash: usage, examples, and more. linux命令行快捷键" property="og:description">
-  <meta content="One-page guide to bash: usage, examples, and more. linux命令行快捷键" property="twitter:description">
+  <meta content="One-page guide to saltstack: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" name="description">
+  <meta content="One-page guide to saltstack: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" property="og:description">
+  <meta content="One-page guide to saltstack: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" property="twitter:description">
 
 
-<link rel="canonical" href="http://0.0.0.0:4001/bash">
-<meta name="og:url" content="http://0.0.0.0:4001/bash">
+<link rel="canonical" href="http://0.0.0.0:4001/saltstack">
+<meta name="og:url" content="http://0.0.0.0:4001/saltstack">
 
 
 
@@ -62,12 +62,8 @@
 
 
 
-  <meta content='Linux' property='article:section'>
+  <meta content='Devops' property='article:section'>
 
-
-
-
-  <meta content='Featured' property='article:tag'>
 
 
 
@@ -2176,9 +2172,9 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "WebPage",
     "@id": "https://google.com/article"
   },
-  "headline": "bash cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/bash.jpg?t=20200830165813" ],
-  "description": "One-page guide to bash: usage, examples, and more. linux命令行快捷键"
+  "headline": "saltstack cheatsheet",
+  "image": [ "https://assets.devhints.io/previews/saltstack.jpg?t=20200830165813" ],
+  "description": "One-page guide to saltstack: usage, examples, and more. 这里只记录常规使用的，详细请查看这里"
 }
 </script>
 <script type='application/ld+json'>
@@ -2189,15 +2185,15 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "ListItem",
     "position": 1,
     "item": {
-      "@id": "http://0.0.0.0:4001/#linux",
-      "name": "Linux"
+      "@id": "http://0.0.0.0:4001/#devops",
+      "name": "Devops"
     }
   },{
     "@type": "ListItem",
     "position": 2,
     "item": {
-      "@id": "http://0.0.0.0:4001/bash",
-      "name": "bash"
+      "@id": "http://0.0.0.0:4001/saltstack",
+      "name": "saltstack"
     }
   }]
 }
@@ -2241,7 +2237,7 @@ ul.-also-see.-also-see.-also-see > li > em {
 
 <div class='body-area'>
   <header class='main-heading -center' role='banner'>
-    <h1 class='h1'>bash <em>速查</em></h1>
+    <h1 class='h1'>saltstack <em>速查</em></h1>
 
     <div class='pubbox' data-js-no-preview>
       
@@ -2254,15 +2250,13 @@ ul.-also-see.-also-see.-also-see > li > em {
 
   
     <div class='intro-content MarkdownBody'>
-      <p>linux命令行快捷键</p>
+      <p>这里只记录常规使用的，详细请查看<a href="https://www.cnblogs.com/shipment/p/13526858.html">这里</a></p>
 
     </div>
   
 
   <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
-    <h2 class="-three-column" id="getting-started">Getting started</h2>
-
-<h3 id="移动">移动</h3>
+    <h3 id="秘钥">秘钥</h3>
 
 <table class="-shortcuts">
   <thead>
@@ -2273,25 +2267,33 @@ ul.-also-see.-also-see.-also-see > li > em {
   </thead>
   <tbody>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>a</code></td>
-      <td>移动带行首</td>
+      <td><code>salt-key -L</code></td>
+      <td>查看秘钥</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>e</code></td>
-      <td>移动带行尾</td>
+      <td><code>salt-key -a keyname</code></td>
+      <td>接收指定秘钥</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>←</code></td>
-      <td>移动到左边上个词</td>
+      <td><code>salt-key -A</code></td>
+      <td>接收所有秘钥</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>→</code></td>
-      <td>移动到右边下个词</td>
+      <td><code>salt-key -d keyname</code></td>
+      <td>删除指定秘钥</td>
+    </tr>
+    <tr>
+      <td><code>salt-key -D</code></td>
+      <td>删除所有秘钥</td>
+    </tr>
+    <tr>
+      <td><code>salt-key -A</code></td>
+      <td>接收所有秘钥</td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="删除">删除</h3>
+<h3 id="常用">常用</h3>
 
 <table class="-shortcuts">
   <thead>
@@ -2302,57 +2304,32 @@ ul.-also-see.-also-see.-also-see > li > em {
   </thead>
   <tbody>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>u</code></td>
-      <td>从光标删到行首</td>
+      <td><code>salt "*" test.ping</code></td>
+      <td>检查节点存活</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>k</code></td>
-      <td>从光标删到行尾</td>
+      <td><code>salt "*" cmd.run 'df -h'</code></td>
+      <td>节点运行命令</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>w</code></td>
-      <td>删除光标前一个词</td>
+      <td><code>salt "*" service.get_all</code></td>
+      <td>获取节点所有服务</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>y</code></td>
-      <td>撤销删除</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="其他">其他</h3>
-
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>z</code></td>
-      <td>vim切换到命令行</td>
+      <td><code>salt '*' service.reload nginx</code></td>
+      <td>节点reload nginx</td>
     </tr>
     <tr>
-      <td><code>fg</code></td>
-      <td>命令行切换回vim</td>
+      <td><code>salt '*' service.stop nginx</code></td>
+      <td>节点stop nginx</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>r</code></td>
-      <td>历史命令查找</td>
+      <td><code>salt '*' service.start nginx</code></td>
+      <td>节点stop nginx</td>
     </tr>
     <tr>
-      <td><code>ctrl</code> <em>+</em> <code>l</code></td>
-      <td>清屏</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>d</code></td>
-      <td>退出当前shell log</td>
-    </tr>
-    <tr>
-      <td><code>!!</code></td>
-      <td>执行上一条命令</td>
+      <td><code>salt-cp 'test' 1.sh  /home</code></td>
+      <td>把1.sh拷贝到test的home下面</td>
     </tr>
   </tbody>
 </table>
