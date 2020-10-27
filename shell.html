@@ -23,30 +23,30 @@
 <meta charset='utf-8'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href='./assets/favicon.png' rel='shortcut icon'>
-<meta content='/docker.html' name='app:pageurl'>
+<meta content='/shell.html' name='app:pageurl'>
 
 
-  <title>docker cheatsheet</title>
-  <meta content='docker cheatsheet' property='og:title'>
-  <meta content='docker cheatsheet' property='twitter:title'>
+  <title>Shell cheatsheet</title>
+  <meta content='Shell cheatsheet' property='og:title'>
+  <meta content='Shell cheatsheet' property='twitter:title'>
   <meta content='article' property='og:type'>
 
 
 
-  <meta content='https://assets.devhints.io/previews/docker.jpg?t=20201027154722' property='og:image'>
-  <meta content='https://assets.devhints.io/previews/docker.jpg?t=20201027154722' property='twitter:image'>
+  <meta content='https://assets.devhints.io/previews/shell.jpg?t=20201027154803' property='og:image'>
+  <meta content='https://assets.devhints.io/previews/shell.jpg?t=20201027154803' property='twitter:image'>
   <meta content='900' property='og:image:width'>
   <meta content='471' property='og:image:height'>
 
 
 
-  <meta content="One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" name="description">
-  <meta content="One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" property="og:description">
-  <meta content="One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里" property="twitter:description">
+  <meta content="One-page guide to Shell: usage, examples, and more. 常用记录" name="description">
+  <meta content="One-page guide to Shell: usage, examples, and more. 常用记录" property="og:description">
+  <meta content="One-page guide to Shell: usage, examples, and more. 常用记录" property="twitter:description">
 
 
-<link rel="canonical" href="http://0.0.0.0:3000/docker">
-<meta name="og:url" content="http://0.0.0.0:3000/docker">
+<link rel="canonical" href="http://0.0.0.0:3000/shell">
+<meta name="og:url" content="http://0.0.0.0:3000/shell">
 
 
 
@@ -62,8 +62,12 @@
 
 
 
-  <meta content='Devops' property='article:section'>
+  <meta content='Linux' property='article:section'>
 
+
+
+
+  <meta content='Featured' property='article:tag'>
 
 
 
@@ -2157,11 +2161,11 @@ ul.-also-see.-also-see.-also-see > li > em {
 <!-- deferred css -->
 <script id='deferred-css'>;(function(links){(requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame||(function(fn){window.addEventListener('load',fn)}))(function(){var h=document.getElementsByTagName('head')[0],l,i;for (i=0;i<links.length;i++){l=document.createElement('link');l.rel='stylesheet';l.href=links[i];h.appendChild(l);}})})([
 'https://fonts.googleapis.com/css?family=Cousine',
-'./assets/2017/style.css?t=20201027154722'
+'./assets/2017/style.css?t=20201027154803'
 ])</script>
 <noscript id='deferred-css-fallback'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cousine'>
-<link rel='stylesheet' href='./assets/2017/style.css?t=20201027154722'>
+<link rel='stylesheet' href='./assets/2017/style.css?t=20201027154803'>
 </noscript>
 
 <script type='application/ld+json'>
@@ -2172,9 +2176,9 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "WebPage",
     "@id": "https://google.com/article"
   },
-  "headline": "docker cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/docker.jpg?t=20201027154722" ],
-  "description": "One-page guide to docker: usage, examples, and more. 这里只记录常规使用的，详细请查看这里"
+  "headline": "Shell cheatsheet",
+  "image": [ "https://assets.devhints.io/previews/shell.jpg?t=20201027154803" ],
+  "description": "One-page guide to Shell: usage, examples, and more. 常用记录"
 }
 </script>
 <script type='application/ld+json'>
@@ -2185,15 +2189,15 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "ListItem",
     "position": 1,
     "item": {
-      "@id": "http://0.0.0.0:3000/#devops",
-      "name": "Devops"
+      "@id": "http://0.0.0.0:3000/#linux",
+      "name": "Linux"
     }
   },{
     "@type": "ListItem",
     "position": 2,
     "item": {
-      "@id": "http://0.0.0.0:3000/docker",
-      "name": "docker"
+      "@id": "http://0.0.0.0:3000/shell",
+      "name": "Shell"
     }
   }]
 }
@@ -2237,7 +2241,7 @@ ul.-also-see.-also-see.-also-see > li > em {
 
 <div class='body-area'>
   <header class='main-heading -center' role='banner'>
-    <h1 class='h1'>docker <em>速查</em></h1>
+    <h1 class='h1'>Shell <em>速查</em></h1>
 
     <div class='pubbox' data-js-no-preview>
       
@@ -2250,65 +2254,229 @@ ul.-also-see.-also-see.-also-see > li > em {
 
   
     <div class='intro-content MarkdownBody'>
-      <p>这里只记录常规使用的，详细请查看<a href="https://www.cnblogs.com/shipment/p/13526858.html#servicereload">这里</a></p>
+      <p>常用记录</p>
 
     </div>
   
 
   <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
-    <h3 id="生命周期管理">生命周期管理</h3>
+    <h2 class="-three-column" id="getting-started">Getting started</h2>
 
-<pre class="-shortcuts"><code class="language-shell">#创建一个容器，一般写docker-compose.yml文件处理
-docker run [OPTIONS]
+<h3 id="字符串变量">字符串变量</h3>
 
-#启动|停止|重启 nginx容器
-docker start|stop|restart nginx 
+<table class="-shortcuts">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>x='test${name}'</code></td>
+      <td>变量无效</td>
+    </tr>
+    <tr>
+      <td><code>x="test${name}"</code></td>
+      <td>变量有效</td>
+    </tr>
+    <tr>
+      <td><code>echo ${#name}</code></td>
+      <td>在${}中使用“#”获取长度</td>
+    </tr>
+  </tbody>
+</table>
 
-#杀掉nginx容器
-docker kill nginx
-
-#删除nginx容器  
-docker rm nginx
+<pre><code class="language-shell">[root@localhost ~]# name=laddin
+[root@localhost ~]# x='${name}'
+[root@localhost ~]# y="${name}"
+[root@localhost ~]# echo $x
+${name}
+[root@localhost ~]# echo $y
+laddin
+[root@localhost ~]# echo ${#name}
+6
 </code></pre>
 
-<h3 id="操作运维">操作运维</h3>
+<h3 id="运算符">运算符</h3>
 
-<pre class="-shortcuts"><code class="language-shell">#查看当前所有容器 
-docker ps -a
+<p class="-prime -setup">数字关系</p>
 
-#查看nginx容器的元数据
-docker inspect nginx
+<table class="-shortcuts">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>-eq</code></td>
+      <td>检测是否相等</td>
+    </tr>
+    <tr>
+      <td><code>-ne</code></td>
+      <td>检测是否不等</td>
+    </tr>
+    <tr>
+      <td><code>-gt</code></td>
+      <td>检测左边的数是否大于右边</td>
+    </tr>
+    <tr>
+      <td><code>-lt</code></td>
+      <td>检测左边的数是否小于右边</td>
+    </tr>
+    <tr>
+      <td><code>-ge</code></td>
+      <td>检测左边的数是否大于等于右边的</td>
+    </tr>
+    <tr>
+      <td><code>-le</code></td>
+      <td>检测左边的数是否小于等于右边的</td>
+    </tr>
+  </tbody>
+</table>
 
-#查看nginx容器的进程
-docker top  nginx
+<p class="-prime -setup">字符串关系</p>
 
-#显示带时间戳的log
-docker logs -f -t nginx
+<table class="-shortcuts">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>=</code></td>
+      <td>检测相等</td>
+    </tr>
+    <tr>
+      <td><code>!=</code></td>
+      <td>检测不等</td>
+    </tr>
+    <tr>
+      <td><code>-z</code></td>
+      <td>检测字符串为0</td>
+    </tr>
+    <tr>
+      <td><code>-n</code></td>
+      <td>检测字符串不为0</td>
+    </tr>
+    <tr>
+      <td><code>$</code></td>
+      <td>检测字符串是否为空</td>
+    </tr>
+  </tbody>
+</table>
 
-#显示8-28的最新10条log
-docker logs --since="2020-08-28" --tail 10 nginx
+<p class="-prime -setup">布尔</p>
 
-#把test.sh拷贝到nginx容器的root下面
-docker cp test.sh nginx:/root/
-</code></pre>
+<table class="-shortcuts">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>&amp;&amp;</code></td>
+      <td>逻辑and</td>
+    </tr>
+    <tr>
+      <td><code>||</code></td>
+      <td>逻辑or</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="容器相关">容器相关</h3>
+<p class="-prime -setup">文件</p>
 
-<pre class="-shortcuts"><code class="language-shell">#查看容器信息 
-docker info
+<table class="-shortcuts">
+  <tbody>
+    <tr>
+      <td>Shortcut</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td><code>-b file</code></td>
+      <td>检测文件是否是块设备文件</td>
+    </tr>
+    <tr>
+      <td><code>-c file</code></td>
+      <td>检测文件是否是字符设备文件</td>
+    </tr>
+    <tr>
+      <td><code>-d file</code></td>
+      <td>检测文件是否是目录</td>
+    </tr>
+    <tr>
+      <td><code>-f file</code></td>
+      <td>检测文件是否是普通文件</td>
+    </tr>
+    <tr>
+      <td><code>-g file</code></td>
+      <td>检测文件是否设置了 SGID 位</td>
+    </tr>
+    <tr>
+      <td><code>-k file</code></td>
+      <td>检测文件是否设置了粘着位(Sticky Bit)</td>
+    </tr>
+    <tr>
+      <td><code>-p file</code></td>
+      <td>检测文件是否是有名管道</td>
+    </tr>
+    <tr>
+      <td><code>-u file</code></td>
+      <td>检测文件是否设置了 SUID 位</td>
+    </tr>
+    <tr>
+      <td><code>-r file</code></td>
+      <td>检测文件是否可读</td>
+    </tr>
+    <tr>
+      <td><code>-w file</code></td>
+      <td>检测文件是否可写</td>
+    </tr>
+    <tr>
+      <td><code>-x file</code></td>
+      <td>检测文件是否可执行</td>
+    </tr>
+    <tr>
+      <td><code>-s file</code></td>
+      <td>检测文件是否为空（文件大小是否大于0）</td>
+    </tr>
+    <tr>
+      <td><code>-e file</code></td>
+      <td>检测文件包括目录是否存在</td>
+    </tr>
+  </tbody>
+</table>
 
-#查看容器当前镜像
-docker image ls
+<h3 id="跳出循环">跳出循环</h3>
 
-#清理none镜像 
-docker rmi $(docker images -f "dangling=true" -q)
+<table class="-shortcuts">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>break</code></td>
+      <td>跳出中循环</td>
+    </tr>
+    <tr>
+      <td><code>continue</code></td>
+      <td>跳出当前循环。继续下一次循环</td>
+    </tr>
+  </tbody>
+</table>
 
-#拉取镜像
-docker pull
+<h3 id="字符串切割">字符串切割</h3>
 
-#进入nginx容器 
-docker exec -it nginx /bin/bash
-</code></pre>
 
   </main>
 </div>
@@ -3064,7 +3232,7 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","critical.js"], null)</script>
-<script src='./assets/packed/app.js?t=20201027154722'></script>
+<script src='./assets/packed/app.js?t=20201027154803'></script>
 
 
 
