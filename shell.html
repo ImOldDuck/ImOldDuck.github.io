@@ -33,8 +33,8 @@
 
 
 
-  <meta content='https://assets.devhints.io/previews/shell.jpg?t=20201027154803' property='og:image'>
-  <meta content='https://assets.devhints.io/previews/shell.jpg?t=20201027154803' property='twitter:image'>
+  <meta content='https://assets.devhints.io/previews/shell.jpg?t=20201103151011' property='og:image'>
+  <meta content='https://assets.devhints.io/previews/shell.jpg?t=20201103151011' property='twitter:image'>
   <meta content='900' property='og:image:width'>
   <meta content='471' property='og:image:height'>
 
@@ -2161,11 +2161,11 @@ ul.-also-see.-also-see.-also-see > li > em {
 <!-- deferred css -->
 <script id='deferred-css'>;(function(links){(requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame||(function(fn){window.addEventListener('load',fn)}))(function(){var h=document.getElementsByTagName('head')[0],l,i;for (i=0;i<links.length;i++){l=document.createElement('link');l.rel='stylesheet';l.href=links[i];h.appendChild(l);}})})([
 'https://fonts.googleapis.com/css?family=Cousine',
-'./assets/2017/style.css?t=20201027154803'
+'./assets/2017/style.css?t=20201103151011'
 ])</script>
 <noscript id='deferred-css-fallback'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cousine'>
-<link rel='stylesheet' href='./assets/2017/style.css?t=20201027154803'>
+<link rel='stylesheet' href='./assets/2017/style.css?t=20201103151011'>
 </noscript>
 
 <script type='application/ld+json'>
@@ -2177,7 +2177,7 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@id": "https://google.com/article"
   },
   "headline": "Shell cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/shell.jpg?t=20201027154803" ],
+  "image": [ "https://assets.devhints.io/previews/shell.jpg?t=20201103151011" ],
   "description": "One-page guide to Shell: usage, examples, and more. 常用记录"
 }
 </script>
@@ -2260,9 +2260,7 @@ ul.-also-see.-also-see.-also-see > li > em {
   
 
   <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
-    <h2 class="-three-column" id="getting-started">Getting started</h2>
-
-<h3 id="字符串变量">字符串变量</h3>
+    <h3 id="字符串变量">字符串变量</h3>
 
 <table class="-shortcuts">
   <thead>
@@ -2296,6 +2294,40 @@ ${name}
 laddin
 [root@localhost ~]# echo ${#name}
 6
+</code></pre>
+<h3 id="列表">列表</h3>
+
+<pre><code class="language-shell">[root@localhost ~]# list=("value1" "value2" "value3")
+[root@localhost ~]# echo ${list[1]}
+value2
+[root@localhost ~]# echo ${!list[*]}
+0 1 2
+[root@localhost ~]# echo ${list[*]}
+value1 value2 value3
+[root@localhost ~]# list=("${list[@]}" "value3")
+[root@localhost ~]# echo ${list[*]}
+value1 value2 value3 value3
+[root@localhost ~]# for i in ${list[*]}; do echo $i; done
+value1
+value2
+value3
+value3
+</code></pre>
+
+<h3 id="字典">字典</h3>
+
+<pre><code class="language-shell">[root@localhost ~]# declare -A dic
+[root@localhost ~]# dic=([key1]="value1" [key2]="value2" [key3]="value3")
+[root@localhost ~]# echo ${dic["key1"]}
+value1
+[root@localhost ~]# echo ${!dic[*]}
+key3 key2 key1
+[root@localhost ~]# echo ${dic[*]}
+value3 value2 value1
+[root@localhost ~]# for key in $(echo ${!dic[*]}); do echo "$key : ${dic[$key]}"; done
+key3 : value3
+key2 : value2
+key1 : value1
 </code></pre>
 
 <h3 id="运算符">运算符</h3>
@@ -2394,11 +2426,13 @@ laddin
 <p class="-prime -setup">文件</p>
 
 <table class="-shortcuts">
-  <tbody>
+  <thead>
     <tr>
-      <td>Shortcut</td>
-      <td>Description</td>
+      <th>Shortcut</th>
+      <th>Description</th>
     </tr>
+  </thead>
+  <tbody>
     <tr>
       <td><code>-b file</code></td>
       <td>检测文件是否是块设备文件</td>
@@ -2477,6 +2511,71 @@ laddin
 
 <h3 id="字符串切割">字符串切割</h3>
 
+<table class="-shortcuts">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>name=</code></td>
+      <td>变量为http://wiki.laddin.me/shell</td>
+    </tr>
+    <tr>
+      <td><code>${name#*.}</code></td>
+      <td>删除第一个.左边</td>
+    </tr>
+    <tr>
+      <td><code>${name##*.}</code></td>
+      <td>删除最后一个.左边</td>
+    </tr>
+    <tr>
+      <td><code>${name%.*}</code></td>
+      <td>删除最后一个.右边</td>
+    </tr>
+    <tr>
+      <td><code>${name%%.*}</code></td>
+      <td>删除第一个.右边</td>
+    </tr>
+    <tr>
+      <td><code>${name:0:4}</code></td>
+      <td>保存右边0到4的字符</td>
+    </tr>
+    <tr>
+      <td><code>${name:7}</code></td>
+      <td>保存右边第7的字符到最后</td>
+    </tr>
+    <tr>
+      <td><code>${name:0-5:2}</code></td>
+      <td>右边5个字符保留2个</td>
+    </tr>
+    <tr>
+      <td><code>${name:0-8}</code></td>
+      <td>保存右边8个字符</td>
+    </tr>
+  </tbody>
+</table>
+
+<pre><code class="language-shell">[root@localhost ~]# name=http://wiki.laddin.me/shell
+[root@localhost ~]# echo ${name#*.}
+laddin.me/shell
+[root@localhost ~]# echo ${name##*.}
+me/shell
+[root@localhost ~]# echo ${name%.*}
+http://wiki.laddin
+[root@localhost ~]# echo ${name%%.*}
+http://wiki
+[root@localhost ~]# echo ${name:0:4}
+http
+[root@localhost ~]# echo ${name:7}
+wiki.laddin.me/shell
+[root@localhost ~]# echo ${name:0-5:2}
+sh
+[root@localhost ~]# echo ${name:0-8}
+me/shell
+</code></pre>
 
   </main>
 </div>
@@ -2501,7 +2600,7 @@ laddin
       
         
         
-        placeholder='搜索 20+ 个内容'
+        placeholder='搜索 21+ 个内容'
       >
   </label>
 </form>
@@ -3055,7 +3154,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33443" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36576" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -3232,7 +3331,7 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","critical.js"], null)</script>
-<script src='./assets/packed/app.js?t=20201027154803'></script>
+<script src='./assets/packed/app.js?t=20201103151011'></script>
 
 
 

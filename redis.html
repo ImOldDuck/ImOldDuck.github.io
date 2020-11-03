@@ -23,30 +23,30 @@
 <meta charset='utf-8'>
 <meta content='width=device-width, initial-scale=1.0' name='viewport'>
 <link href='./assets/favicon.png' rel='shortcut icon'>
-<meta content='/vim.html' name='app:pageurl'>
+<meta content='/redis.html' name='app:pageurl'>
 
 
-  <title>Vim cheatsheet</title>
-  <meta content='Vim cheatsheet' property='og:title'>
-  <meta content='Vim cheatsheet' property='twitter:title'>
+  <title>redis cheatsheet</title>
+  <meta content='redis cheatsheet' property='og:title'>
+  <meta content='redis cheatsheet' property='twitter:title'>
   <meta content='article' property='og:type'>
 
 
 
-  <meta content='https://assets.devhints.io/previews/vim.jpg?t=20201103151011' property='og:image'>
-  <meta content='https://assets.devhints.io/previews/vim.jpg?t=20201103151011' property='twitter:image'>
+  <meta content='https://assets.devhints.io/previews/redis.jpg?t=20201103151011' property='og:image'>
+  <meta content='https://assets.devhints.io/previews/redis.jpg?t=20201103151011' property='twitter:image'>
   <meta content='900' property='og:image:width'>
   <meta content='471' property='og:image:height'>
 
 
 
-  <meta content="One-page guide to Vim: usage, examples, and more. 十指飞舞！" name="description">
-  <meta content="One-page guide to Vim: usage, examples, and more. 十指飞舞！" property="og:description">
-  <meta content="One-page guide to Vim: usage, examples, and more. 十指飞舞！" property="twitter:description">
+  <meta content="One-page guide to redis: usage, examples, and more. 常用的redis操作命令" name="description">
+  <meta content="One-page guide to redis: usage, examples, and more. 常用的redis操作命令" property="og:description">
+  <meta content="One-page guide to redis: usage, examples, and more. 常用的redis操作命令" property="twitter:description">
 
 
-<link rel="canonical" href="http://0.0.0.0:3000/vim">
-<meta name="og:url" content="http://0.0.0.0:3000/vim">
+<link rel="canonical" href="http://0.0.0.0:3000/redis">
+<meta name="og:url" content="http://0.0.0.0:3000/redis">
 
 
 
@@ -62,12 +62,8 @@
 
 
 
-  <meta content='Linux' property='article:section'>
+  <meta content='Devops' property='article:section'>
 
-
-
-
-  <meta content='Featured' property='article:tag'>
 
 
 
@@ -2176,9 +2172,9 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "WebPage",
     "@id": "https://google.com/article"
   },
-  "headline": "Vim cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/vim.jpg?t=20201103151011" ],
-  "description": "One-page guide to Vim: usage, examples, and more. 十指飞舞！"
+  "headline": "redis cheatsheet",
+  "image": [ "https://assets.devhints.io/previews/redis.jpg?t=20201103151011" ],
+  "description": "One-page guide to redis: usage, examples, and more. 常用的redis操作命令"
 }
 </script>
 <script type='application/ld+json'>
@@ -2189,15 +2185,15 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@type": "ListItem",
     "position": 1,
     "item": {
-      "@id": "http://0.0.0.0:3000/#linux",
-      "name": "Linux"
+      "@id": "http://0.0.0.0:3000/#devops",
+      "name": "Devops"
     }
   },{
     "@type": "ListItem",
     "position": 2,
     "item": {
-      "@id": "http://0.0.0.0:3000/vim",
-      "name": "Vim"
+      "@id": "http://0.0.0.0:3000/redis",
+      "name": "redis"
     }
   }]
 }
@@ -2241,7 +2237,7 @@ ul.-also-see.-also-see.-also-see > li > em {
 
 <div class='body-area'>
   <header class='main-heading -center' role='banner'>
-    <h1 class='h1'>Vim <em>速查</em></h1>
+    <h1 class='h1'>redis <em>速查</em></h1>
 
     <div class='pubbox' data-js-no-preview>
       
@@ -2254,253 +2250,114 @@ ul.-also-see.-also-see.-also-see > li > em {
 
   
     <div class='intro-content MarkdownBody'>
-      <p>十指飞舞！</p>
+      <p>常用的redis操作命令</p>
 
     </div>
   
 
   <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
-    <h2 class="-three-column" id="getting-started">Getting started</h2>
-
-<h3 class="-prime" id="退出">退出</h3>
+    <h3 id="常规操作">常规操作</h3>
 
 <table class="-shortcuts">
   <thead>
     <tr>
       <th>Shortcut</th>
       <th>Description</th>
+      <th> </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><code>:x</code></td>
-      <td>保存文件并关闭</td>
+      <td><code>SELECT index</code></td>
+      <td>切换到指定数据库</td>
+      <td> </td>
     </tr>
     <tr>
-      <td><code>:wq</code></td>
-      <td>保存文件并关闭</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td><code>:q</code></td>
-      <td>关闭文件</td>
+      <td><code>SET key value</code></td>
+      <td>创建key</td>
+      <td> </td>
     </tr>
     <tr>
-      <td><code>:q!</code></td>
-      <td>强制关闭文件</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="方向键">方向键</h3>
-
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>k</code> <em>/</em> <code>↑</code></td>
-      <td>上</td>
+      <td><code>GET key</code></td>
+      <td>获取key的值</td>
+      <td> </td>
     </tr>
     <tr>
-      <td><code>j</code> <em>/</em> <code>↓</code></td>
-      <td>下</td>
+      <td><code>DEL key</code></td>
+      <td>删除key</td>
+      <td> </td>
     </tr>
     <tr>
-      <td><code>h</code> <em>/</em> <code>←</code></td>
-      <td>左</td>
+      <td><code>TYPE key</code></td>
+      <td>查看key所存储值的类型</td>
+      <td> </td>
     </tr>
     <tr>
-      <td><code>l</code> <em>/</em> <code>→</code></td>
-      <td>右</td>
+      <td><code>EXISTS key</code></td>
+      <td>检查key是否存在</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>EXPIRE key 60</code></td>
+      <td>设置key的过期时间60秒</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>ttl key</code></td>
+      <td>查看key的剩余存活时间</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><code>PERSIST key</code></td>
+      <td>移除key的过期时间</td>
+      <td> </td>
     </tr>
   </tbody>
 </table>
 
-<h3 id="移动">移动</h3>
+<h3 class="-prime" id="哈希操作">哈希操作</h3>
+<p class="-setup">添加语法</p>
 
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>gg</code></td>
-      <td>到第一行</td>
-    </tr>
-    <tr>
-      <td><code>G</code></td>
-      <td>到最后一行</td>
-    </tr>
-    <tr>
-      <td><code>5gg</code></td>
-      <td>到第五行</td>
-    </tr>
-    <tr>
-      <td><code>^</code></td>
-      <td>到行首非空格</td>
-    </tr>
-    <tr>
-      <td><code>0</code></td>
-      <td>到行首</td>
-    </tr>
-    <tr>
-      <td><code>$</code></td>
-      <td>到行尾</td>
-    </tr>
-    <tr>
-      <td><code>w</code></td>
-      <td>下一个词</td>
-    </tr>
-    <tr>
-      <td><code>b</code></td>
-      <td>上一个词</td>
-    </tr>
-    <tr>
-      <td><code>e</code></td>
-      <td>下一个词结尾</td>
-    </tr>
-    <tr>
-      <td><code>ge</code></td>
-      <td>上一个词结尾</td>
-    </tr>
-    <tr>
-      <td><code>fx</code></td>
-      <td>到当前行下一个x</td>
-    </tr>
-    <tr>
-      <td><code>Fx</code></td>
-      <td>到当前行上一个x</td>
-    </tr>
-    <tr>
-      <td><code>40%</code></td>
-      <td>到文件40%</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="修改">修改</h3>
-
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>:%s/1/2/g</code></td>
-      <td>全文的1改成2</td>
-    </tr>
-    <tr>
-      <td><code>rx</code></td>
-      <td>光标处字符改为x</td>
-    </tr>
-    <tr>
-      <td><code>.</code></td>
-      <td>复制上一步操作</td>
-    </tr>
-    <tr>
-      <td><code>u</code></td>
-      <td>撤回上一步操作</td>
-    </tr>
-    <tr>
-      <td><code>ctrl</code> <em>+</em> <code>r</code></td>
-      <td>撤销一个撤回</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="删除">删除</h3>
-
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>dd</code></td>
-      <td>删除当前行</td>
-    </tr>
-    <tr>
-      <td><code>dgg</code></td>
-      <td>删除当前行到文章开头</td>
-    </tr>
-    <tr>
-      <td><code>dG</code></td>
-      <td>删除当前行到文章结尾</td>
-    </tr>
-    <tr>
-      <td><code>dtx</code></td>
-      <td>删除光标到X之间字符</td>
-    </tr>
-    <tr>
-      <td><code>x</code></td>
-      <td>删除光标处字符</td>
-    </tr>
-    <tr>
-      <td><code>d^</code></td>
-      <td>删除光标到行首字符</td>
-    </tr>
-    <tr>
-      <td><code>d$</code></td>
-      <td>删除光标到行尾字符</td>
-    </tr>
-  </tbody>
-</table>
-
-<h3 id="批量操作">批量操作</h3>
-
-<pre><code class="language-shell">#进入可视化模式
-ctrl + v
-
-#方向键选择要改的区域
-
-#插入
-I
-#替换
-c
-#删除
-d
-
-#退出
-Esc
-
-#这个时候选择的区域就都改变了
+<pre class="-shortcuts"><code class="language-shell">#为指定的key，添加field-value数据
+hset key field value  			
+#同时添加多个 field-value 到 hash的key中
+hmset key field1 value1 field2 value2 ...
 </code></pre>
 
-<h3 id="其他">其他</h3>
+<p class="-prime -setup">取值语法</p>
 
-<table class="-shortcuts">
-  <thead>
-    <tr>
-      <th>Shortcut</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>:set paste</code></td>
-      <td>处理复制乱码</td>
-    </tr>
-    <tr>
-      <td><code>:set ff=unix</code></td>
-      <td>处理文件格式</td>
-    </tr>
-  </tbody>
-</table>
+<pre class="-shortcuts"><code class="language-shell">#获取key中一个field的value
+hget key field  			
+#获取key中一个或多个field的value
+hmget key field1 field2 ...
+#获取key中所有的field和value
+hgetall key
+#获取key中所有的field
+hkeys key
+#获取key中所有的value
+hvals key
+#获取key中field的总数量
+hlen key
+</code></pre>
+
+<p class="-prime -setup">删除语法</p>
+
+<pre class="-shortcuts"><code class="language-shell">#删除一个或多个field
+hdel key field1 field2 ...
+</code></pre>
+
+<p class="-prime -setup">其他语法</p>
+
+<pre class="-shortcuts"><code class="language-shell">#只有在field不存在时，才可以添加field-value
+hsetnx key field value
+#为指定field的value整数值加上整数增量increment
+hincrby key field increment
+#为指定field的value整数或小数加上整数或小数增量increment
+hincrbyfloat key field increment
+#查看field是否在key中存在
+hexists key field 
+</code></pre>
+
 
   </main>
 </div>
