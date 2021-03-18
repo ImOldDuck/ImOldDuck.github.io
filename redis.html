@@ -33,8 +33,8 @@
 
 
 
-  <meta content='https://assets.devhints.io/previews/redis.jpg?t=20201103151011' property='og:image'>
-  <meta content='https://assets.devhints.io/previews/redis.jpg?t=20201103151011' property='twitter:image'>
+  <meta content='https://assets.devhints.io/previews/redis.jpg?t=20210318101219' property='og:image'>
+  <meta content='https://assets.devhints.io/previews/redis.jpg?t=20210318101219' property='twitter:image'>
   <meta content='900' property='og:image:width'>
   <meta content='471' property='og:image:height'>
 
@@ -2157,11 +2157,11 @@ ul.-also-see.-also-see.-also-see > li > em {
 <!-- deferred css -->
 <script id='deferred-css'>;(function(links){(requestAnimationFrame||mozRequestAnimationFrame||webkitRequestAnimationFrame||msRequestAnimationFrame||(function(fn){window.addEventListener('load',fn)}))(function(){var h=document.getElementsByTagName('head')[0],l,i;for (i=0;i<links.length;i++){l=document.createElement('link');l.rel='stylesheet';l.href=links[i];h.appendChild(l);}})})([
 'https://fonts.googleapis.com/css?family=Cousine',
-'./assets/2017/style.css?t=20201103151011'
+'./assets/2017/style.css?t=20210318101219'
 ])</script>
 <noscript id='deferred-css-fallback'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Cousine'>
-<link rel='stylesheet' href='./assets/2017/style.css?t=20201103151011'>
+<link rel='stylesheet' href='./assets/2017/style.css?t=20210318101219'>
 </noscript>
 
 <script type='application/ld+json'>
@@ -2173,7 +2173,7 @@ ul.-also-see.-also-see.-also-see > li > em {
     "@id": "https://google.com/article"
   },
   "headline": "redis cheatsheet",
-  "image": [ "https://assets.devhints.io/previews/redis.jpg?t=20201103151011" ],
+  "image": [ "https://assets.devhints.io/previews/redis.jpg?t=20210318101219" ],
   "description": "One-page guide to redis: usage, examples, and more. 常用的redis操作命令"
 }
 </script>
@@ -2358,6 +2358,30 @@ hincrbyfloat key field increment
 hexists key field 
 </code></pre>
 
+<h3 id="其他命令">其他命令</h3>
+
+<table class="-shortcuts">
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>DBSIZE</code></td>
+      <td>查看当前库key的数量</td>
+    </tr>
+    <tr>
+      <td><code>INFO keyspace</code></td>
+      <td>获取各个DB的key的数量</td>
+    </tr>
+    <tr>
+      <td><code>SCAN 0</code></td>
+      <td>游标为0开始迭代</td>
+    </tr>
+  </tbody>
+</table>
 
   </main>
 </div>
@@ -2382,7 +2406,7 @@ hexists key field
       
         
         
-        placeholder='搜索 21+ 个内容'
+        placeholder='搜索 22+ 个内容'
       >
   </label>
 </form>
@@ -2936,7 +2960,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36576" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "35712" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -3113,7 +3137,7 @@ function hmrAcceptRun(bundle, id) {
   }
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","critical.js"], null)</script>
-<script src='./assets/packed/app.js?t=20201103151011'></script>
+<script src='./assets/packed/app.js?t=20210318101219'></script>
 
 
 
